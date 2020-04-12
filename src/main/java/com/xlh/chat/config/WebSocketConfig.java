@@ -2,6 +2,7 @@ package com.xlh.chat.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.socket.config.annotation.EnableWebSocket;
 import org.springframework.web.socket.server.standard.ServerEndpointExporter;
 
 /**
@@ -12,6 +13,7 @@ import org.springframework.web.socket.server.standard.ServerEndpointExporter;
  * @date 2020年04月10日 22:40 胡晓磊 Exp $
  */
 @Configuration
+@EnableWebSocket
 public class WebSocketConfig {
 
     @Bean
