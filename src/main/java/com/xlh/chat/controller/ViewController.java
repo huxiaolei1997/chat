@@ -19,4 +19,20 @@ public class ViewController {
     public String index() {
         return "index";
     }
+
+    @GetMapping("/wechat/index")
+    public String wechatIndex() {
+        return "wechat/index";
+    }
+
+    @GetMapping("/wechat/friends")
+    public String wechatFriends() {
+        return "wechat/friends";
+    }
+
+    @GetMapping("/wechat/install")
+    public String wechatInstall() {
+        return "wechat/install";
+    }
+
 }
