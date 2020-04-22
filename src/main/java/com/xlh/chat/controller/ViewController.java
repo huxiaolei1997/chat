@@ -1,5 +1,6 @@
 package com.xlh.chat.controller;
 
+import com.xlh.chat.annotation.JwtIgnore;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,16 +22,19 @@ public class ViewController {
     }
 
     @GetMapping("/wechat/index")
+    @JwtIgnore
     public String wechatIndex() {
         return "wechat/index";
     }
 
     @GetMapping("/wechat/friends")
+    @JwtIgnore
     public String wechatFriends() {
         return "wechat/friends";
     }
 
     @GetMapping("/wechat/install")
+    @JwtIgnore
     public String wechatInstall() {
         return "wechat/install";
     }
