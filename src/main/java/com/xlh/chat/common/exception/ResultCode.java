@@ -55,6 +55,7 @@ public enum ResultCode {
     BUSINESS_IS_TOP(30040, "已经到最顶部"),
     BUSINESS_IS_BOTTOM(30041, "已经到最底部"),
     BUSINESS_NAME_EXISTED(30051, "名称已存在"),
+    BUSINESS_MD5_ENCRYPT_FAIL(30052, "加密失败"),
 
     /* 系统错误：40001-49999 */
     SYSTEM_INNER_ERROR(40001, "系统繁忙，请稍后重试"),
@@ -74,6 +75,7 @@ public enum ResultCode {
     DICT_EXIST_DEPEND(40014, "该字典数据存在详情依赖，不允许删除"),
     DICT_DETAIL_LOCK(40015, "该字典数据被锁定，不允许修改或删除"),
     DEPART_CODE_EXISTED_WITH_ARGS(40016, "组织机构编码【{0}】系统已存在"),
+    SAVE_USER_INFO_ERROR(40017, "添加用户信息失败"),
 
     /* 数据错误：50001-599999 */
     RESULT_DATA_NONE(50001, "数据未找到"),

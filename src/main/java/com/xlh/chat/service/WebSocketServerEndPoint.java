@@ -33,10 +33,10 @@ public class WebSocketServerEndPoint {
 
     private Long userId;
 
-    private static UserService userService;
+    private static UserInfoService userInfoService;
 
-    public void setUserService(@Autowired UserService userService) {
-        WebSocketServerEndPoint.userService = userService;
+    public void setUserService(@Autowired UserInfoService userInfoService) {
+        WebSocketServerEndPoint.userInfoService = userInfoService;
     }
 
 
