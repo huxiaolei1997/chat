@@ -4,14 +4,12 @@ import com.xlh.chat.annotation.JwtIgnore;
 import com.xlh.chat.common.exception.BizException;
 import com.xlh.chat.common.exception.ResultCode;
 import com.xlh.chat.config.Audience;
-import com.xlh.chat.util.JwtTokenUtil;
+import com.xlh.chat.utils.JwtTokenUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Component;
-import org.springframework.web.context.support.WebApplicationContextUtils;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 

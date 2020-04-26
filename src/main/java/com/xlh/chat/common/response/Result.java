@@ -51,8 +51,8 @@ public class Result<T> {
         return new Result(ResultCode.FAIL);
     }
 
-    public static Result FAIL(String message) {
-        return new Result(message);
+    public static Result FAIL(ResultCode resultCode) {
+        return new Result(resultCode);
     }
 
     public int getCode() {

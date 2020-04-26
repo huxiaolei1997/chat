@@ -1,5 +1,7 @@
 package com.xlh.chat.config;
 
+import com.xlh.chat.interceptor.AccessLimitInterceptor;
+import com.xlh.chat.interceptor.ApiIdempotentInterceptor;
 import com.xlh.chat.interceptor.JwtInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -19,13 +21,22 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class WebConfig implements WebMvcConfigurer {
     @Autowired
     private JwtInterceptor jwtInterceptor;
+
+    @Autowired
+    private AccessLimitInterceptor accessLimitInterceptor;
+
+    @Autowired
+    private ApiIdempotentInterceptor apiIdempotentInterceptor;
+
     /**
      * 添加拦截器
      */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         //拦截路径可自行配置多个 可用 ，分隔开
+        registry.addInterceptor(accessLimitInterceptor).addPathPatterns("/**").excludePathPatterns("/js/**", "/css/**", "/images/**");
         registry.addInterceptor(jwtInterceptor).addPathPatterns("/**").excludePathPatterns("/js/**", "/css/**", "/images/**");
+        registry.addInterceptor(apiIdempotentInterceptor).addPathPatterns("/**").excludePathPatterns("/js/**", "/css/**", "/images/**");
     }
 
     /**

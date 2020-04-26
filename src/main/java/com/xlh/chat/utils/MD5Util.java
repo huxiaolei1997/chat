@@ -1,4 +1,4 @@
-package com.xlh.chat.util;
+package com.xlh.chat.utils;
 
 import com.xlh.chat.common.exception.BizException;
 import com.xlh.chat.common.exception.ResultCode;

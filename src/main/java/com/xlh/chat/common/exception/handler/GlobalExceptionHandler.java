@@ -26,7 +26,7 @@ import java.util.List;
 /**
  * 全局异常处理器
  *
- * @author pyy
+ * @author hxl
  */
 @RestControllerAdvice
 public class GlobalExceptionHandler {
@@ -40,7 +40,7 @@ public class GlobalExceptionHandler {
     public Result handleException(BizException e) {
         // 打印异常信息
         log.error("### 异常信息:{} ###", e.getMessage());
-        return new Result(e.getResultCode());
+        return Result.FAIL(e.getResultCode());
     }
 
     /**
@@ -58,7 +58,7 @@ public class GlobalExceptionHandler {
                 errors.forEach(p -> {
                     FieldError fieldError = (FieldError) p;
                     errorMsg.append(fieldError.getDefaultMessage()).append(",");
-                    log.error("### 请求参数错误：{" + fieldError.getObjectName() + "},field{" + fieldError.getField() + "},errorMessage{" + fieldError.getDefaultMessage() + "}");
+                    log.error("### 请求参数错误：{},field: {},errorMessage: {}", fieldError.getObjectName(), fieldError.getField(), fieldError.getDefaultMessage());
                 });
             }
         } else if (e instanceof BindException) {
@@ -68,7 +68,7 @@ public class GlobalExceptionHandler {
             }
         }
 
-        return new Result(ResultCode.PARAM_IS_INVALID);
+        return Result.FAIL(ResultCode.PARAM_IS_INVALID);
     }
 
     /**
@@ -80,7 +80,7 @@ public class GlobalExceptionHandler {
         e.printStackTrace();
         // 打印异常信息
         log.error("### 不可知的异常:{} ###", e.getMessage());
-        return new Result(ResultCode.SYSTEM_INNER_ERROR);
+        return Result.FAIL(ResultCode.SYSTEM_INNER_ERROR);
     }
 
 }

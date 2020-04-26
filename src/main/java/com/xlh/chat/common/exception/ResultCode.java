@@ -89,7 +89,7 @@ public enum ResultCode {
     INTERFACE_ADDRESS_INVALID(60004, "接口地址无效"),
     INTERFACE_REQUEST_TIMEOUT(60005, "接口请求超时"),
     INTERFACE_EXCEED_LOAD(60006, "接口负载过高"),
-
+    REPETITIVE_OPERATION(60007, "请勿重复操作"),
 
     /* 权限错误：70001-79999 */
     PERMISSION_UNAUTHENTICATED(70001, "此操作需要登陆系统！"),
@@ -99,6 +99,7 @@ public enum ResultCode {
     PERMISSION_LIMIT(70005, "访问次数受限制"),
     PERMISSION_TOKEN_INVALID(70006, "无效token"),
     PERMISSION_SIGNATURE_ERROR(70007, "签名失败");
+
 
     //操作代码
     private int code;

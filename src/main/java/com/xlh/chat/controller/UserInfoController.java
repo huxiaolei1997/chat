@@ -1,6 +1,8 @@
 package com.xlh.chat.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.xlh.chat.annotation.AccessLimit;
+import com.xlh.chat.annotation.ApiIdempotent;
 import com.xlh.chat.annotation.JwtIgnore;
 import com.xlh.chat.common.response.Result;
 import com.xlh.chat.manager.UserManager;
@@ -35,6 +37,7 @@ public class UserInfoController {
      */
     @PostMapping("/save")
     @JwtIgnore
+    @ApiIdempotent
     public Result save(@RequestBody UserInfoDto userInfoDto) {
         userManager.save(userInfoDto);
         return Result.SUCCESS(true);
@@ -49,6 +52,7 @@ public class UserInfoController {
      */
     @PostMapping("/login")
     @JwtIgnore
+    @AccessLimit
     public Result login(@RequestBody LoginDto loginDto, HttpServletResponse response) {
         JSONObject result = userManager.login(loginDto, response);
         return Result.SUCCESS(result);

@@ -2,7 +2,7 @@
  * @company 杭州信牛网络科技有限公司
  * @copyright Copyright (c) 2015 - 2017
  */
-package com.xlh.chat.util;
+package com.xlh.chat.utils;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -257,7 +257,7 @@ public class DateUtil {
      * 获取前一天时间
      *
      * @param
-     * @return java.util.List<java.lang.String>
+     * @return java.utils.List<java.lang.String>
      * @author 胡晓磊
      * @version 1.0
      * @date 2019-07-12 15:11:56
@@ -287,7 +287,7 @@ public class DateUtil {
      * 获取前几天的时间
      *
      * @param
-     * @return java.util.List<java.lang.String>
+     * @return java.utils.List<java.lang.String>
      * @author 胡晓磊
      * @version 1.0
      * @date 2019-07-12 15:11:56

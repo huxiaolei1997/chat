@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.xlh.chat.annotation.JwtIgnore;
 import com.xlh.chat.common.response.Result;
 import com.xlh.chat.config.Audience;
-import com.xlh.chat.util.JwtTokenUtil;
+import com.xlh.chat.utils.JwtTokenUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

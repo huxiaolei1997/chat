@@ -1,4 +1,4 @@
-package com.xlh.chat.util;
+package com.xlh.chat.utils;
 
 import org.apache.commons.codec.binary.Base64;
 import org.slf4j.Logger;
