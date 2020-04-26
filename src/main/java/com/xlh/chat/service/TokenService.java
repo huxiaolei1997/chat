@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 
 public interface TokenService {
 
-    Result createToken();
+    String createToken();
 
     void checkToken(HttpServletRequest request);
 

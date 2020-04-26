@@ -24,14 +24,14 @@ public class TokenServiceImpl implements TokenService {
     private JedisUtil jedisUtil;
 
     @Override
-    public Result createToken() {
+    public String createToken() {
         String str = RandomUtil.UUID32();
         StringBuilder token = new StringBuilder();
         token.append(Constant.Redis.TOKEN_PREFIX).append(str);
 
         jedisUtil.set(token.toString(), token.toString(), Constant.Redis.EXPIRE_TIME_MINUTE);
 
-        return Result.SUCCESS(token.toString());
+        return token.toString();
     }
 
     @Override

@@ -3,6 +3,8 @@ package com.xlh.chat.common.response;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.xlh.chat.common.exception.ResultCode;
 
+import java.io.Serializable;
+
 /**
  * 用途描述
  *
@@ -10,11 +12,9 @@ import com.xlh.chat.common.exception.ResultCode;
  * @company xxx
  * @date 2020年04月19日 18:30 胡晓磊 Exp $
  */
+public class Result<T> implements Serializable {
 
-
-@JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
-public class Result<T> {
-
+    private static final long serialVersionUID = 8029139109225152616L;
     //操作代码
     private int code;
 
