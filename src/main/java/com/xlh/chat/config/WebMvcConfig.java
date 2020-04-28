@@ -24,9 +24,9 @@
 //    @Override
 //    public void addViewControllers(ViewControllerRegistry registry) {
 ////        registry.addViewController("/").setViewName("wes");
-//        registry.addViewController("/view/wechat/index").setViewName("wechat/index");
-//        registry.addViewController("/view/wechat/friends").setViewName("wechat/friends");
-//        registry.addViewController("/view/wechat/install").setViewName("wechat/install");
+//        registry.addViewController("/wechat/index").setViewName("wechat/index");
+//        registry.addViewController("/wechat/friends").setViewName("wechat/friends");
+//        registry.addViewController("/wechat/install").setViewName("wechat/install");
 ////        registry.addViewController("/login").setViewName("login");
 //    }
 //

@@ -34,9 +34,15 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         //拦截路径可自行配置多个 可用 ，分隔开
-        registry.addInterceptor(accessLimitInterceptor).addPathPatterns("/**").excludePathPatterns("/js/**", "/css/**", "/images/**");
-        registry.addInterceptor(jwtInterceptor).addPathPatterns("/**").excludePathPatterns("/js/**", "/css/**", "/images/**");
-        registry.addInterceptor(apiIdempotentInterceptor).addPathPatterns("/**").excludePathPatterns("/js/**", "/css/**", "/images/**");
+        registry.addInterceptor(accessLimitInterceptor)
+                .addPathPatterns("/**")
+                .excludePathPatterns("/js/**", "/css/**", "/images/**", "/wechat/**","/favicon.ico","/error");
+        registry.addInterceptor(jwtInterceptor)
+                .addPathPatterns("/**")
+                .excludePathPatterns("/js/**", "/css/**", "/images/**", "/wechat/**","/favicon.ico","/error");
+        registry.addInterceptor(apiIdempotentInterceptor)
+                .addPathPatterns("/**")
+                .excludePathPatterns("/js/**", "/css/**", "/images/**", "/wechat/**","/favicon.ico","/error");
     }
 
     /**

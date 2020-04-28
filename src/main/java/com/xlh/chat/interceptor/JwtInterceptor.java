@@ -47,7 +47,7 @@ public class JwtInterceptor extends HandlerInterceptorAdapter {
 
         // 获取请求头信息authorization信息
         final String authHeader = request.getHeader(JwtTokenUtil.AUTH_HEADER_KEY);
-        log.info("## authHeader= {}", authHeader);
+        log.info("## authHeader= {}, uri = {}", authHeader, request.getRequestURI());
 
         if (StringUtils.isBlank(authHeader) || !authHeader.startsWith(JwtTokenUtil.TOKEN_PREFIX)) {
             log.info("### 用户未登录，请先登录 ###");

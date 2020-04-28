@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @company xxx
  * @date 2020年04月12日 19:19 胡晓磊 Exp $
  */
-@RequestMapping("/view")
 @Controller
 public class ViewController {
 
@@ -37,6 +36,12 @@ public class ViewController {
     @JwtIgnore
     public String wechatInstall() {
         return "wechat/install";
+    }
+
+    @GetMapping("/wechat/login")
+    @JwtIgnore
+    public String wechatLogin() {
+        return "wechat/login";
     }
 
 }
