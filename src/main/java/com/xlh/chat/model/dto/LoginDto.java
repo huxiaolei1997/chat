@@ -22,7 +22,7 @@ public class LoginDto implements Serializable {
 
     @Size(max = 32, message = "用户名最长不能超过32个字符")
     private String userName;
-
+//
     @NotNull
     @Size(min = 8, max = 16, message = "密码长度必须在8-16位之间")
     private String password;

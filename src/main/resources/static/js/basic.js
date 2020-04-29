@@ -1,9 +1,11 @@
 var basic = {
-    ajax: function ($, option, callback) {
+    getUrl: "http://localhost:8080"
+    ,ajax: function ($, option, callback) {
         $.ajax({
             method: option.method || 'POST',
             url: option.url,
-            data: option.data
+            data: option.data,
+            contentType:option.contentType
         }).done(function (msg) {
             // 如果接口调用成功
             if (msg.code == '0') {

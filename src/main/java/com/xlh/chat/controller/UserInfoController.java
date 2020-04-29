@@ -52,7 +52,6 @@ public class UserInfoController {
      */
     @PostMapping("/login")
     @JwtIgnore
-    @AccessLimit
     public Result login(@RequestBody LoginDto loginDto, HttpServletResponse response) {
         JSONObject result = userManager.login(loginDto, response);
         return Result.SUCCESS(result);
