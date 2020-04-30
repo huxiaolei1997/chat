@@ -1,39 +1,46 @@
 package com.xlh.chat.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
+import com.alibaba.druid.support.http.StatViewServlet;
+import com.alibaba.druid.support.http.WebStatFilter;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
+import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
-import org.springframework.stereotype.Component;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.support.TransactionTemplate;
 
 import javax.sql.DataSource;
+import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 数据库连接配置
  *
- * @author jiaopengfei
- * @version $Id: RabbitConfig, v0.1
- * @company 杭州信牛网络科技有限公司
- * @date 2018年08月28日 下午4:26 jiaopengfei Exp $
+ * @author huxiaolei
  */
-@Component
+@Configuration
 @PropertySource("classpath:application-${spring.profiles.active}.properties")
 public class DataSourceConfig {
 
     @Autowired
     private DBConfig dbConfig;
 
-    @Bean
-    @Primary
-    public DataSource dataSource(){
+//    @Bean(destroyMethod = "close", initMethod = "init")
+//    public DataSource dataSource(){
+//        return buildDataSource();
+//    }
+
+    @Bean(destroyMethod = "close", initMethod = "init")
+    public DruidDataSource dataSource() {
         return buildDataSource();
     }
 
@@ -47,21 +54,20 @@ public class DataSourceConfig {
     }
 
     @Bean("transactionManager")
-    public DataSourceTransactionManager dataSourceTransactionManager(DataSource dataSource){
+    public DataSourceTransactionManager dataSourceTransactionManager(DataSource dataSource) {
         return new DataSourceTransactionManager(dataSource);
     }
 
     @Bean("transactionTemplate")
-    public TransactionTemplate transactionTemplate(PlatformTransactionManager transactionManager){
+    public TransactionTemplate transactionTemplate(PlatformTransactionManager transactionManager) {
         return new TransactionTemplate(transactionManager);
     }
 
-    private DataSource buildDataSource() {
-        //DataSource dataSource = createDataSource();
+    private DruidDataSource buildDataSource() {
         return createDataSource();
     }
 
-    private DataSource createDataSource() {
+    private DruidDataSource createDataSource() {
         DruidDataSource datasource = new DruidDataSource();
         datasource.setUrl(dbConfig.getUrl());
         datasource.setUsername(dbConfig.getUsername());
@@ -82,7 +88,40 @@ public class DataSourceConfig {
         datasource.setMaxPoolPreparedStatementPerConnectionSize(dbConfig.getMaxPoolPreparedStatementPerConnectionSize());
         datasource.setUseGlobalDataSourceStat(dbConfig.isUseGlobalDataSourceStat());
         datasource.setConnectionProperties(dbConfig.getConnectionProperties());
+        try {
+            datasource.setFilters(dbConfig.getFilters());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return datasource;
     }
 
+    @Bean
+    public ServletRegistrationBean druidServletRegistrationBean() {
+        ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean();
+        servletRegistrationBean.setServlet(new StatViewServlet());
+        servletRegistrationBean.addUrlMappings("/druid/*");
+//        servletRegistrationBean.addInitParameter("allow", "");
+//        servletRegistrationBean.addInitParameter("deny", "");
+        servletRegistrationBean.addInitParameter("loginUsername", "admin");
+        servletRegistrationBean.addInitParameter("loginPassword", "admin");
+        return servletRegistrationBean;
+    }
+
+    /**
+     * 注册DruidFilter拦截
+     *
+     * @return
+     */
+    @Bean
+    public FilterRegistrationBean duridFilterRegistrationBean() {
+        FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();
+        filterRegistrationBean.addUrlPatterns("/*");
+        filterRegistrationBean.setFilter(new WebStatFilter());
+        Map<String, String> initParams = new HashMap<String, String>();
+        //设置忽略请求
+        initParams.put("exclusions", "*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*");
+        filterRegistrationBean.setInitParameters(initParams);
+        return filterRegistrationBean;
+    }
 }

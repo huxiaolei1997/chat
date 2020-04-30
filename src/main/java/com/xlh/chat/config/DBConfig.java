@@ -32,4 +32,6 @@ public class DBConfig {
     private int maxPoolPreparedStatementPerConnectionSize;
     private String connectionProperties;
     private boolean useGlobalDataSourceStat;
+    private String filters;
+    private String aopPatterns;
 }

@@ -108,10 +108,16 @@
             <version>3.4.5</version>
         </dependency>
 
+<!--        <dependency>-->
+<!--            <groupId>com.alibaba</groupId>-->
+<!--            <artifactId>druid-spring-boot-starter</artifactId>-->
+<!--            <version>1.1.17</version>-->
+<!--        </dependency>-->
+        <!-- 如果这里的版本是 1.0.12，那么数据源监控界面会出现 (*) property for user to setup 错误-->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
-            <version>1.0.12</version>
+            <version>1.1.12</version>
         </dependency>
         <!--        <dependency>-->
         <!--            <groupId>ch.qos.logback</groupId>-->

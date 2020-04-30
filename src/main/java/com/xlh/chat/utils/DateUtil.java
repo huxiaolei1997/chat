@@ -1,5 +1,5 @@
 /**
- * @company 杭州信牛网络科技有限公司
+ * @company 杭州网络科技有限公司
  * @copyright Copyright (c) 2015 - 2017
  */
 package com.xlh.chat.utils;
@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * 日期处理工具
  *
- * @author 侯俊昌(HouJunChang)
+ * @author hxl
  * @version $Id: DateUtil, v0.1 2017年03月01日 16:26 侯俊昌(HouJunChang) Exp $
  */
 @Slf4j
