@@ -33,5 +33,4 @@ public class DBConfig {
     private String connectionProperties;
     private boolean useGlobalDataSourceStat;
     private String filters;
-    private String aopPatterns;
 }

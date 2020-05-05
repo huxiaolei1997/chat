@@ -46,8 +46,10 @@ public class JwtInterceptor extends HandlerInterceptorAdapter {
         }
 
         // 获取请求头信息authorization信息
-        final String authHeader = request.getHeader(JwtTokenUtil.AUTH_HEADER_KEY);
-        log.info("## authHeader= {}, uri = {}", authHeader, request.getRequestURI());
+        String authHeader = request.getHeader(JwtTokenUtil.AUTH_HEADER_KEY);
+        // 获取referer，校验referer是否来自本域名
+        String referer = request.getHeader("Referer");
+        log.info("## authHeader= {}, uri = {}, referer = {}", authHeader, request.getRequestURI(), referer);
 
         if (StringUtils.isBlank(authHeader) || !authHeader.startsWith(JwtTokenUtil.TOKEN_PREFIX)) {
             log.info("### 用户未登录，请先登录 ###");
