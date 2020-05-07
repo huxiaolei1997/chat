@@ -5,8 +5,12 @@ import com.xlh.chat.common.exception.ResultCode;
 import com.xlh.chat.config.Audience;
 import io.jsonwebtoken.*;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import javax.crypto.spec.SecretKeySpec;
+import javax.servlet.http.HttpServletRequest;
 import javax.xml.bind.DatatypeConverter;
 import java.security.Key;
 import java.util.Date;
@@ -19,11 +23,14 @@ import java.util.Date;
  * @date 2020年04月19日 17:42 胡晓磊 Exp $
  */
 @Slf4j
+@Component
 public class JwtTokenUtil {
     public static final String AUTH_HEADER_KEY = "Authorization";
 
     public static final String TOKEN_PREFIX = "Bearer ";
 
+    @Autowired
+    private Audience audience;
 
     /**
      * 解析JWT
@@ -134,5 +141,37 @@ public class JwtTokenUtil {
      */
     public static boolean isExpiration(String token, String base64Security) {
         return parseJWT(token, base64Security).getExpiration().before(new Date());
+    }
+
+    /**
+     * 获取token
+     *
+     * @return
+     */
+    public static String getToken(HttpServletRequest request) {
+        // 获取请求头信息authorization信息
+        String authHeader = request.getHeader(AUTH_HEADER_KEY);
+        // 获取referer，校验referer是否来自本域名
+        String referer = request.getHeader("Referer");
+        log.info("## authHeader= {}, uri = {}, referer = {}", authHeader, request.getRequestURI(), referer);
+
+        if (StringUtils.isBlank(authHeader) || !authHeader.startsWith(TOKEN_PREFIX)) {
+            log.info("### 用户未登录，请先登录 ###");
+            throw new BizException(ResultCode.USER_NOT_LOGGED_IN);
+        }
+
+        // 获取token
+        String token = authHeader.substring(7);
+
+        return token;
+    }
+
+    /**
+     * 获取userId
+     *
+     * @return
+     */
+    public Long getUserId(HttpServletRequest request) {
+        return Long.valueOf(getUserId(getToken(request), audience.getBase64Secret()));
     }
 }

@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @RestController
 @RequestMapping("/message")
-public class MesssageController {
+public class MessageController {
 
 //    @PostMapping("/send")
 //    public

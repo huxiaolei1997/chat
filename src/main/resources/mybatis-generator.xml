@@ -54,133 +54,160 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
-<!--        <table tableName="cms_link_temp" domainObjectName="LinkTemp"></table>-->
-<!--        <table tableName="cms_link" domainObjectName="Link"></table>-->
-<!--        <table tableName="cms_product_msg" domainObjectName="ProductMsg">-->
-<!--            <columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-<!--            <columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-<!--        </table>-->
-<!--        <table tableName="csp_product_msg" domainObjectName="CspProductMsg"></table>-->
-<!--        <table tableName="cms_article_collect" domainObjectName="ArticleCollect" >-->
-<!--            &lt;!&ndash;自增主键返回到实体类&ndash;&gt;-->
-<!--            <generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
-<!--            <columnOverride column="content" jdbcType="BLOB" javaType="java.lang.String" />-->
-<!--            <columnOverride column="collect_time" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-<!--            <columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-<!--            <columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-<!--        </table>-->
-<!--        <table tableName="cms_article_msg_hot" domainObjectName="ArticleMsgHot">-->
-<!--            <columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-<!--            <columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--        <table tableName="cms_link_temp" domainObjectName="LinkTemp"></table>-->
+        <!--        <table tableName="cms_link" domainObjectName="Link"></table>-->
+        <!--        <table tableName="cms_product_msg" domainObjectName="ProductMsg">-->
+        <!--            <columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--            <columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--        </table>-->
+        <!--        <table tableName="csp_product_msg" domainObjectName="CspProductMsg"></table>-->
+        <!--        <table tableName="cms_article_collect" domainObjectName="ArticleCollect" >-->
+        <!--            &lt;!&ndash;自增主键返回到实体类&ndash;&gt;-->
+        <!--            <generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
+        <!--            <columnOverride column="content" jdbcType="BLOB" javaType="java.lang.String" />-->
+        <!--            <columnOverride column="collect_time" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--            <columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--            <columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--        </table>-->
+        <!--        <table tableName="cms_article_msg_hot" domainObjectName="ArticleMsgHot">-->
+        <!--            <columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--            <columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
 
-<!--        </table>-->
-<!--        <table tableName="cms_article_advertising_hot" domainObjectName="ArticleAdvertisingHot">-->
-<!--            <columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-<!--            <columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--        </table>-->
+        <!--        <table tableName="cms_article_advertising_hot" domainObjectName="ArticleAdvertisingHot">-->
+        <!--            <columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--            <columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
 
-<!--        </table>-->
+        <!--        </table>-->
 
         <!--            <generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
 
-<!--        <table tableName="cms_article_statistical" domainObjectName="ArticleStatistical">-->
-<!--        </table>-->
-<!--        <table tableName="cms_wx_public_account" domainObjectName="WxPublicAccount">-->
-<!--        </table>-->
-            <!--<table tableName="cms_wechat_game_score" domainObjectName="WechatGameScore">-->
-                            <!--<columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-                            <!--<columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-            <!--</table>-->
-            <!--<table tableName="cms_wechat_game_user" domainObjectName="WechatGameUser">-->
-                <!--<columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-                <!--<columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-            <!--</table>-->
-<!--            <table tableName="cms_wechat_game_score" domainObjectName="WechatGameScore">-->
-<!--                <columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-<!--                <columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-<!--            </table>-->
+        <!--        <table tableName="cms_article_statistical" domainObjectName="ArticleStatistical">-->
+        <!--        </table>-->
+        <!--        <table tableName="cms_wx_public_account" domainObjectName="WxPublicAccount">-->
+        <!--        </table>-->
+        <!--<table tableName="cms_wechat_game_score" domainObjectName="WechatGameScore">-->
+        <!--<columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--<columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--</table>-->
+        <!--<table tableName="cms_wechat_game_user" domainObjectName="WechatGameUser">-->
+        <!--<columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--<columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--</table>-->
+        <!--            <table tableName="cms_wechat_game_score" domainObjectName="WechatGameScore">-->
+        <!--                <columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--                <columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--            </table>-->
 
-<!--            <table tableName="cms_card_msg" domainObjectName="CardMsg">-->
-<!--                <columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-<!--                <columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-<!--            </table>-->
+        <!--            <table tableName="cms_card_msg" domainObjectName="CardMsg">-->
+        <!--                <columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--                <columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--            </table>-->
 
-<!--            <table tableName="cms_hot_bank_msg" domainObjectName="HotBankMsg">-->
-<!--                <columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-<!--                <columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-<!--            </table>-->
+        <!--            <table tableName="cms_hot_bank_msg" domainObjectName="HotBankMsg">-->
+        <!--                <columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--                <columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--            </table>-->
 
-<!--            <table tableName="cms_card_msg_rank" domainObjectName="CardMsgRank">-->
-<!--                <columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-<!--                <columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-<!--            </table>-->
+        <!--            <table tableName="cms_card_msg_rank" domainObjectName="CardMsgRank">-->
+        <!--                <columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--                <columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--            </table>-->
 
-<!--        <table tableName="cms_bank_configuration" domainObjectName="BankConfiguration">-->
-<!--            <columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-<!--            <columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-<!--        </table>-->
-<!--            <table tableName="cms_small_program_configuration" domainObjectName="SmallProgramConfiguration">-->
-<!--                <columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-<!--                <columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-<!--            </table>-->
-<!--            <table tableName="cms_small_program_article" domainObjectName="SmallProgramArticle">-->
-<!--                <columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-<!--                <columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-<!--            </table>-->
-<!--                <table tableName="cms_article_msg" domainObjectName="ArticleMsg">-->
-<!--                    <columnOverride column="content" jdbcType="BLOB" javaType="java.lang.String" />-->
-<!--                    <columnOverride column="answer" jdbcType="BLOB" javaType="java.lang.String" />-->
-<!--                    <columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-<!--                    <columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-<!--                </table>-->
-<!--            <table tableName="cms_article_detail_advert" domainObjectName="ArticleDetailAdvert">-->
-<!--                <columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-<!--                <columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-<!--            </table>-->
+        <!--        <table tableName="cms_bank_configuration" domainObjectName="BankConfiguration">-->
+        <!--            <columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--            <columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--        </table>-->
+        <!--            <table tableName="cms_small_program_configuration" domainObjectName="SmallProgramConfiguration">-->
+        <!--                <columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--                <columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--            </table>-->
+        <!--            <table tableName="cms_small_program_article" domainObjectName="SmallProgramArticle">-->
+        <!--                <columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--                <columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--            </table>-->
+        <!--                <table tableName="cms_article_msg" domainObjectName="ArticleMsg">-->
+        <!--                    <columnOverride column="content" jdbcType="BLOB" javaType="java.lang.String" />-->
+        <!--                    <columnOverride column="answer" jdbcType="BLOB" javaType="java.lang.String" />-->
+        <!--                    <columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--                    <columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--                </table>-->
+        <!--            <table tableName="cms_article_detail_advert" domainObjectName="ArticleDetailAdvert">-->
+        <!--                <columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--                <columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--            </table>-->
 
-<!--<table tableName="cms_small_program_template_msg_record" domainObjectName="SmallProgramTemplateMsgRecord">-->
-<!--<columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-<!--<columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-<!--<columnOverride column="push_status" jdbcType="TINYINT" javaType="java.lang.Byte"/>-->
-<!--</table>-->
-<!--        <table tableName="cms_insurance_msg" domainObjectName="InsuranceMsg">-->
-<!--            <columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-<!--            <columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-<!--        </table>-->
-                <!--<table tableName="cms_small_program_template_msg_record" domainObjectName="SmallProgramTemplateMsgRecord">-->
-                    <!--<columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-                    <!--<columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-                    <!--<columnOverride column="push_status" jdbcType="TINYINT" javaType="java.lang.Byte"/>-->
-                <!--</table>-->
-<!--            <table tableName="cms_report_order" domainObjectName="ReportOrder">-->
-<!--                <columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-<!--                <columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-<!--            </table>-->
-<!--            <table tableName="cms_report_order_sub" domainObjectName="ReportOrderSub">-->
-<!--                <columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-<!--                <columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-<!--            </table>-->
+        <!--<table tableName="cms_small_program_template_msg_record" domainObjectName="SmallProgramTemplateMsgRecord">-->
+        <!--<columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--<columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--<columnOverride column="push_status" jdbcType="TINYINT" javaType="java.lang.Byte"/>-->
+        <!--</table>-->
+        <!--        <table tableName="cms_insurance_msg" domainObjectName="InsuranceMsg">-->
+        <!--            <columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--            <columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--        </table>-->
+        <!--<table tableName="cms_small_program_template_msg_record" domainObjectName="SmallProgramTemplateMsgRecord">-->
+        <!--<columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--<columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--<columnOverride column="push_status" jdbcType="TINYINT" javaType="java.lang.Byte"/>-->
+        <!--</table>-->
+        <!--            <table tableName="cms_report_order" domainObjectName="ReportOrder">-->
+        <!--                <columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--                <columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--            </table>-->
+        <!--            <table tableName="cms_report_order_sub" domainObjectName="ReportOrderSub">-->
+        <!--                <columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--                <columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--            </table>-->
 
         <!--邮箱泄漏相关表-->
-<!--        <table tableName="cms_leak_website_msg" domainObjectName="LeakWebsiteMsg">-->
-<!--            <generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
-<!--            <columnOverride column="gmt_breach" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-<!--            <columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-<!--            <columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-<!--        </table>-->
-<!--        <table tableName="cms_leak_mailbox_msg" domainObjectName="LeakMailboxMsg">-->
-<!--            <generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
-<!--            <columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-<!--            <columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
-<!--        </table>-->
-        <table tableName="user_info" domainObjectName="UserInfo">
-            <columnOverride column="create_time" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>
-            <columnOverride column="modify_time" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>
-            <columnOverride column="gender" jdbcType="TINYINT" javaType="java.lang.Integer"/>
-        </table>
+        <!--        <table tableName="cms_leak_website_msg" domainObjectName="LeakWebsiteMsg">-->
+        <!--            <generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
+        <!--            <columnOverride column="gmt_breach" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--            <columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--            <columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--        </table>-->
+        <!--        <table tableName="cms_leak_mailbox_msg" domainObjectName="LeakMailboxMsg">-->
+        <!--            <generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
+        <!--            <columnOverride column="gmt_create" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--            <columnOverride column="gmt_modify" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--        </table>-->
+        <!--        <table tableName="user_info" domainObjectName="UserInfo">-->
+        <!--            <columnOverride column="create_time" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--            <columnOverride column="modify_time" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--            <columnOverride column="gender" jdbcType="TINYINT" javaType="java.lang.Integer"/>-->
+        <!--        </table>-->
 
-        <table tableName="local_auth" domainObjectName="LocalAuth">
+        <!--        <table tableName="local_auth" domainObjectName="LocalAuth">-->
+        <!--            <columnOverride column="create_time" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--            <columnOverride column="modify_time" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+        <!--        </table>-->
+
+
+<!--        <table tableName="user_group" domainObjectName="UserGroup">-->
+<!--            <columnOverride column="create_time" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+<!--            <columnOverride column="modify_time" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+<!--            <columnOverride column="show_nick_name" jdbcType="TINYINT" javaType="java.lang.Integer"/>-->
+<!--            <columnOverride column="mute" jdbcType="TINYINT" javaType="java.lang.Integer"/>-->
+<!--        </table>-->
+
+<!--        <table tableName="user_group" domainObjectName="UserGroup">-->
+<!--            <columnOverride column="create_time" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+<!--            <columnOverride column="modify_time" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+<!--        </table>-->
+
+<!--        <table tableName="user_relation" domainObjectName="UserRelation">-->
+<!--            <columnOverride column="create_time" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+<!--            <columnOverride column="modify_time" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+<!--            <columnOverride column="status" jdbcType="TINYINT" javaType="java.lang.Integer"/>-->
+<!--        </table>-->
+
+        <table tableName="user_chat_history" domainObjectName="ChatHistory">
             <columnOverride column="create_time" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>
             <columnOverride column="modify_time" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>
+            <columnOverride column="send_time" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>
+            <columnOverride column="msg_type" jdbcType="TINYINT" javaType="java.lang.Integer"/>
+            <columnOverride column="chat_type" jdbcType="TINYINT" javaType="java.lang.Integer"/>
         </table>
     </context>
 </generatorConfiguration>
