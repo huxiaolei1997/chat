@@ -1,6 +1,9 @@
 package com.xlh.chat.service.impl;
 
+import com.xlh.chat.dao.mapper.UserRelationMapper;
+import com.xlh.chat.model.UserRelation;
 import com.xlh.chat.service.UserRelationService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -12,4 +15,11 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class UserRelationServiceImpl implements UserRelationService {
+    @Autowired
+    private UserRelationMapper userRelationMapper;
+
+    @Override
+    public int save(UserRelation userRelation) {
+        return userRelationMapper.insert(userRelation);
+    }
 }

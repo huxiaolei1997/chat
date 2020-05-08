@@ -8,6 +8,7 @@ import com.xlh.chat.common.response.Result;
 import com.xlh.chat.manager.UserManager;
 import com.xlh.chat.model.dto.LoginDto;
 import com.xlh.chat.model.dto.UserInfoDto;
+import com.xlh.chat.model.dto.UserRelationDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -37,7 +38,6 @@ public class UserInfoController {
      */
     @PostMapping("/save")
     @JwtIgnore
-    @ApiIdempotent
     public Result save(@RequestBody UserInfoDto userInfoDto) {
         userManager.save(userInfoDto);
         return Result.SUCCESS(true);
@@ -54,6 +54,31 @@ public class UserInfoController {
     @JwtIgnore
     public Result login(@RequestBody LoginDto loginDto, HttpServletResponse response) {
         JSONObject result = userManager.login(loginDto, response);
+        return Result.SUCCESS(result);
+    }
+
+    /**
+     * 保存好友关系，为了方便测试，暂时开放此方法
+     * @return
+     */
+    @PostMapping("/saveUserRelation")
+    @JwtIgnore
+    public Result saveUserRelation(@RequestBody UserRelationDto userRelationDto) {
+        Boolean result = userManager.saveUserRelation(userRelationDto);
+        return Result.SUCCESS(result);
+    }
+
+    /**
+     * 添加好友
+     * 这里需要在创建一个好友申请表，用来存放好友申请记录
+     * @param userRelationDto
+     * @return
+     */
+    @PostMapping("/addFriend")
+    @JwtIgnore
+    public Result addFriend(@RequestBody UserRelationDto userRelationDto) {
+        // TODO
+        Boolean result = userManager.saveUserRelation(userRelationDto);
         return Result.SUCCESS(result);
     }
 }

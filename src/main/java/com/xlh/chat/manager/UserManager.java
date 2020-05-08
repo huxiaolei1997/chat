@@ -3,13 +3,18 @@ package com.xlh.chat.manager;
 import com.alibaba.fastjson.JSONObject;
 import com.xlh.chat.common.exception.BizException;
 import com.xlh.chat.common.exception.ResultCode;
+import com.xlh.chat.common.response.Result;
 import com.xlh.chat.config.Audience;
+import com.xlh.chat.enums.UserRelationStatusEnum;
 import com.xlh.chat.model.LocalAuth;
 import com.xlh.chat.model.UserInfo;
+import com.xlh.chat.model.UserRelation;
 import com.xlh.chat.model.dto.LoginDto;
 import com.xlh.chat.model.dto.UserInfoDto;
+import com.xlh.chat.model.dto.UserRelationDto;
 import com.xlh.chat.service.LocalAuthService;
 import com.xlh.chat.service.UserInfoService;
+import com.xlh.chat.service.UserRelationService;
 import com.xlh.chat.utils.DateUtil;
 import com.xlh.chat.utils.JwtTokenUtil;
 import com.xlh.chat.utils.MD5Util;
@@ -18,6 +23,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.Timestamp;
 import java.util.UUID;
@@ -40,6 +46,12 @@ public class UserManager {
 
     @Autowired
     private Audience audience;
+
+    @Autowired
+    private JwtTokenUtil jwtTokenUtil;
+
+    @Autowired
+    private UserRelationService userRelationService;
 
     /**
      * 保存用户信息
@@ -124,5 +136,27 @@ public class UserManager {
         }
 
         return result;
+    }
+
+    /**
+     * 保存好友关系
+     *
+     * @param userRelationDto
+     * @return
+     */
+    public Boolean saveUserRelation(UserRelationDto userRelationDto) {
+        // 从jwt token 中获取 userId
+//        Long userId = jwtTokenUtil.getUserId(request);
+
+        UserRelation userRelation = new UserRelation();
+        BeanUtils.copyProperties(userRelationDto, userRelation);
+//        userRelation.setUserId(userId);
+//        userRelation
+        userRelation.setCreateTime(DateUtil.getCurTimestamp());
+        userRelation.setStatus(UserRelationStatusEnum.NORMAL.getValue());
+
+        int result = userRelationService.save(userRelation);
+
+        return true;
     }
 }
