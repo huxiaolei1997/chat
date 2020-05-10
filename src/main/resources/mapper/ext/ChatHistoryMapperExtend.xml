@@ -26,19 +26,19 @@
         from
         user_chat_history
         <where>
-            <if test="send_user_id != null">
+            <if test="sendUserId != null">
                 and send_user_id = #{sendUserId}
             </if>
-            <if test="receive_user_id != null">
+            <if test="receiveUserId != null">
                 and receive_user_id = #{receiveUserId}
             </if>
-            <if test="group_id != null">
+            <if test="groupId != null">
                 and group_id = #{groupId}
             </if>
-            <if test="msg_type != null">
+            <if test="msgType != null">
                 and msg_type = #{msgType}
             </if>
-            <if test="chat_type != null">
+            <if test="chatType != null">
                 and chat_type = #{chatType}
             </if>
         </where>

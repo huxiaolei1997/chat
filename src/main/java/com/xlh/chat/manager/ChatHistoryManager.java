@@ -28,6 +28,12 @@ public class ChatHistoryManager {
     @Autowired
     private ChatHistoryService chatHistoryService;
 
+    /**
+     * 获取用户聊天历史记录
+     *
+     * @param request
+     * @return
+     */
     public Result findUserOrGroupList(HttpServletRequest request) {
         // 从 jwt token 里获取 userId
         Long userId = jwtTokenUtil.getUserId(request);

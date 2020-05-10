@@ -202,12 +202,18 @@
 <!--            <columnOverride column="status" jdbcType="TINYINT" javaType="java.lang.Integer"/>-->
 <!--        </table>-->
 
-        <table tableName="user_chat_history" domainObjectName="ChatHistory">
+<!--        <table tableName="user_chat_history" domainObjectName="ChatHistory">-->
+<!--            <columnOverride column="create_time" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+<!--            <columnOverride column="modify_time" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+<!--            <columnOverride column="send_time" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>-->
+<!--            <columnOverride column="msg_type" jdbcType="TINYINT" javaType="java.lang.Integer"/>-->
+<!--            <columnOverride column="chat_type" jdbcType="TINYINT" javaType="java.lang.Integer"/>-->
+<!--        </table>-->
+
+        <table tableName="user_request_msg" domainObjectName="UserRequestMsg">
             <columnOverride column="create_time" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>
             <columnOverride column="modify_time" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>
-            <columnOverride column="send_time" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>
-            <columnOverride column="msg_type" jdbcType="TINYINT" javaType="java.lang.Integer"/>
-            <columnOverride column="chat_type" jdbcType="TINYINT" javaType="java.lang.Integer"/>
+            <columnOverride column="status" jdbcType="TINYINT" javaType="java.lang.Integer"/>
         </table>
     </context>
 </generatorConfiguration>
